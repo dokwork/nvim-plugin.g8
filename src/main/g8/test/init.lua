@@ -24,7 +24,7 @@ vim.cmd([[packadd packer.nvim]])
 require('packer').startup(function(use)
     use('wbthomason/packer.nvim')
     use({
-        '$name$',
+        '$plugin_name$',
         requires = {
         },
     })
@@ -32,7 +32,7 @@ end)
 
 if packer_bootstrap then
     require('packer').sync()
-    print('Please, restart nvim through try.sh to use installed plugins.')
+    print('Please, restart nvim to use installed plugins.')
 else
     -- Configuration for test:
 
