@@ -34,6 +34,6 @@ if packer_bootstrap then
     require('packer').sync()
     print('Please, restart nvim to use installed plugins.')
 else
-    -- Configuration for test:
+    -- Configuration for tests:
 
 end

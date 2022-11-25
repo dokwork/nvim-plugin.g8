@@ -7,6 +7,7 @@ on:
   pull_request:
     paths-ignore:
       - '**.md'
+      - 'LICENSE'
 
 jobs:
   
@@ -28,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        neovim_version: ['v0.7.0', 'nightly']
+        neovim_version: ['v0.7.0', 'v0.8.0', nightly']
 
     steps:
       - uses: actions/checkout@v3
@@ -50,4 +51,4 @@ jobs:
           git clone --depth 1 https://github.com/nvim-lua/plenary.nvim ~/.local/share/nvim/site/pack/vendor/start/plenary.nvim
           ln -s \$(pwd) ~/.local/share/nvim/site/pack/vendor/start
       - name: Run tests
-        run: nvim --headless -u test/init.vim -c "PlenaryBustedDirectory test { minimal_init = '.test/init.vim' }"
+        run: nvim --headless -u tests/init.vim -c "PlenaryBustedDirectory tests/ { minimal_init = './tests/init.vim' }"
