@@ -1,4 +1,4 @@
-name: feline-cosmos ci
+name: $plugin_name;format="word"$ ci
 
 on:
   push:
